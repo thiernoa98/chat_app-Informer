@@ -31,7 +31,6 @@ if(authToken)
 }
 
 const App = () => {
-  //making sure that channels are in both c_container and c_list_container
   const [createType, setCreateType] = useState('');
   const [isCreating, setIsCreating] = useState(false);
   const [isEditing, setIsEditing] = useState(false);
@@ -44,7 +43,6 @@ const App = () => {
     <div className='app__wrapper'>
       <Chat client={client} theme='team light'>
       <ChannelListContainer
-          //adding ChannelContainer vars to this clss
           isCreating = {isCreating}
           setIsCreating = {setIsCreating}
 
