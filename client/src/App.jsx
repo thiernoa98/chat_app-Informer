@@ -5,23 +5,19 @@ import { Chat } from 'stream-chat-react';
 import { ChannelListContainer,ChannelContainer,Authentic } from './components/imports'; 
 import Cookies from 'universal-cookie'; 
 
-//css from stream
 import 'stream-chat-react/dist/css/index.css';
 import './CSS_Files/App.css';
 
-// get datas, through cookies
+
 const cookies = new Cookies();
 
-//check for login
 const authToken = cookies.get("token");
 
-//get apikey from stream web
+//got apikey from stream web
 const apikey = '8k4ajkqxg7rn';
 
-//instance of stream chat
 const client = StreamChat.getInstance(apikey);
 
-//connect users and messages
 if(authToken)
 {
   client.connectUser({
