@@ -38,15 +38,11 @@ const ChannelContainer = ({ isCreating,setIsCreating, isEditing,setIsEditing, cr
   
 
   return (
-    //channel-list__header
     <div className='channel-list__header-text2'>
 
-{/*<meta name='color-scheme' content='dark'/>*/}
   <Channel
         
         EmptyStateIndicator={MtState}
-      //MessageText is a stream func used to display the message
-        //Message = {(messageProps, index) => <ChannelInner key={index} {...messageProps} /> }
         >
 
           <ChannelInner
