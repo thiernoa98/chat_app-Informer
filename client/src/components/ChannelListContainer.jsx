@@ -9,9 +9,7 @@ const cookies = new Cookies();
 
 const SideBar = ({signout})=>(
   <div className='top-blue__bar'>
-{/*
-    <div className='channel-list__sidebar__icon1'>
-      <div className='icon1__inner'> */}
+
       <div className='logo-icon__image'>
         <img src={Logo} alt='logo' width="100px" /> 
         
