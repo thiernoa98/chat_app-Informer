@@ -7,7 +7,6 @@ import SignoutIcon from '../assets/logout.png';
 
 const cookies = new Cookies();
 
-//func component
 const SideBar = ({signout})=>(
   <div className='top-blue__bar'>
 {/*
