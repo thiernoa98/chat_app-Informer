@@ -15,13 +15,7 @@ const SideBar = ({signout})=>(
         
         </div> 
        <p className='app-name'>informer</p> 
-{/*
-      </div>
 
-    </div>
-
-    <div className='channel-list__sidebar__icon2'>
-      <div className='icon1__inner' onClick={signout}> */}
       <div className='signout-icon__image' onClick={signout}>
         <a href=''>
         <img src={SignoutIcon} alt='Signout' width="30" />
