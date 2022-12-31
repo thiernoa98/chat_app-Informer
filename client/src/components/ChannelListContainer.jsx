@@ -21,15 +21,8 @@ const SideBar = ({signout})=>(
         <img src={SignoutIcon} alt='Signout' width="30" />
         </a>
         </div>
-{/*
-      </div>
-
-    </div>
-*/}
   </div>
 );
-
-//func component
 
 const AppHeader = () => (
 
@@ -39,12 +32,10 @@ const AppHeader = () => (
 </div>
 );
 
-//groups are shown with this func
 const customChannelGroupFilter = (channels) =>{
   return channels.filter((channel) => channel.type === 'team' );
 }
 
-//personal messages
 const customChannelMessagingFilter = (channels) =>{
   return channels.filter((channel) => channel.type === 'messaging' );
 }
@@ -55,9 +46,7 @@ const ChannelListContent = ({isCreating, setIsCreating, setCreateType, setIsEdit
 {
   const { client } = useChatContext();
 
-  //logout func
   const signout = ()=>{
-    //clear all cookies 
     cookies.remove("token");
     cookies.remove('userID');
     cookies.remove('username');
@@ -69,7 +58,6 @@ const ChannelListContent = ({isCreating, setIsCreating, setCreateType, setIsEdit
     window.location.reload();
   }
 
-  //filter onbject //$in == included //get all message wit our userId on it
   const filters = { members: { $in: [client.userID] }};
 
   return (
@@ -81,19 +69,13 @@ const ChannelListContent = ({isCreating, setIsCreating, setCreateType, setIsEdit
         <div className='channel-list__list__wrapper'>
         <AppHeader/>
           <ChannelSearch setToggleContainer = {setToggleContainer} /> 
-
-          {/* groups and messages // channel-list__list__wrapper*/ }
-
           
           <ChannelList 
 
-              //this allows to filter messages
               filters={filters}
   
-              // show groups names
               channelRenderFilterFn={customChannelGroupFilter}
 
-              //teamList class begi
               List={(listProps)=>(
                 <TeamChannelList 
                   {...listProps}
@@ -107,7 +89,6 @@ const ChannelListContent = ({isCreating, setIsCreating, setCreateType, setIsEdit
                 />
               )}
 
-              //TeamPreview class
               Preview = {(previewProps) =>(
                 <TeamChannelPreview 
                 {...previewProps}
@@ -121,18 +102,12 @@ const ChannelListContent = ({isCreating, setIsCreating, setCreateType, setIsEdit
 
           />
       
-
-          {/* direct/provate messages*/}
           
           <ChannelList 
-
-              //this allows to filter messages
               filters={filters}
 
-              //pass on filters here//func
               channelRenderFilterFn={customChannelMessagingFilter}
 
-              //teamList class begi
               List={(listProps)=>(
                 <TeamChannelList 
                   {...listProps}
@@ -146,7 +121,6 @@ const ChannelListContent = ({isCreating, setIsCreating, setCreateType, setIsEdit
                 />
               )}
               
-              //TeamPreview class
               Preview = {(previewProps) =>(
                 <TeamChannelPreview 
                 {...previewProps}
@@ -168,23 +142,18 @@ const ChannelListContent = ({isCreating, setIsCreating, setCreateType, setIsEdit
 
 const ChannelListContainer = ({setCreateType, setIsCreating, setIsEditing})=>{
 
-  //making sure we toggle the website beased on the size of the device
   const [toggleContainer, setToggleContainer] = useState(false);
 
 return (
   <>
-  {/*only visible on desktop devices //channel-list__container*/}
 
     <div className=''>
       <ChannelListContent
-      //ChannelListContent func has four params, no issue if we have just three here
         setIsCreating = {setIsCreating}
         setCreateType = {setCreateType}
         setIsEditing = {setIsEditing}
       />
     </div>
-
-    {/* only visible on mobile deivices*/}
 
     <div className='channel-list__container-responsive'
     style={{left: toggleContainer ? "0%" : "-89%", backgroundcolor: "#005fff"}}>
