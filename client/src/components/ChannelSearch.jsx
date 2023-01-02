@@ -1,4 +1,3 @@
-//rafc"react air function coomponents" //getting the groups and people, querying
 import React, {useState, useEffect} from 'react';
 import { useChatContext } from 'stream-chat-react';
 import {SearchIcon} from '../assets';
@@ -16,7 +15,6 @@ const ChannelSearch = ({setToggleContainer}) => {
 
 
     useEffect(() => {
-      //if no query, clear
       if(!query){
       
         setTeamChannels([]);
