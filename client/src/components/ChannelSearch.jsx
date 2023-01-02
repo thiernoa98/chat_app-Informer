@@ -23,20 +23,15 @@ const ChannelSearch = ({setToggleContainer}) => {
       
       }, [query])
 
-
-    //the getChanls func //async since it has to be setfirst
     const getChannels = async(text) =>{
         try {
-            //query //userID is mine,admin
             const channelResponse = client.queryChannels({
               type:'team', 
               name: {$autocomplete: text},
               members: {$in: [client.userID]}
             });
           
-            //query other users
             const userResponse = client.queryUsers({
-              //exclude our userID with $ne
               id: {$ne: client.userID },
               name: {$autocomplete: text},
               
