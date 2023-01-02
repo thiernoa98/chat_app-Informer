@@ -52,7 +52,6 @@ const ChannelSearch = ({setToggleContainer}) => {
         event.preventDefault();
         setLoading(true);
 
-        //what is been searched, the value of input below
         setQuery(event.target.value);
         getChannels(event.target.value);
 
@@ -86,7 +85,6 @@ const ChannelSearch = ({setToggleContainer}) => {
 
         {
           
-          //check if query exist
           query && (
             <OutcomeDropdown
               teamChannels = {teamChannels}
