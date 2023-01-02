@@ -38,21 +38,17 @@ const ChannelSearch = ({setToggleContainer}) => {
             })
 
             const [channels, {users}] = await Promise.all([channelResponse, userResponse]);
-
-            //check if the searched group/person exist
             if(channels.length) setTeamChannels(channels);
 
             if(users.length) setDirectChannels(users);
 
         } catch (error) {
-            //if erro, set query mt
             setQuery('');
         }
     }
 
 
     const searchOnClick = (event)=>{
-        //prevent refresh of page after search
         event.preventDefault();
         setLoading(true);
 
