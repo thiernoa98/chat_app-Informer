@@ -31,16 +31,13 @@ const Authentic = () => {
 
         const {username, password, phoneNumber } = form;
 
-        //the path to the back-end codes
         const URL = 'http://localhost:5000/authentic';
 
 
-        //make a resquest to the url, depending on which side signup or login
         const { data: {token, userID, hassedPassword, fullName}}  = 
         await axios.post(`${URL}/${isSignup? 'signup':'login' }`, 
         {username, password, fullName: form.fullName, phoneNumber });
 
-        //get data back from backend and store in Cookie
         cookies.set('token', token);
         cookies.set('username', username);
         cookies.set('fullName', fullName);
@@ -52,7 +49,6 @@ const Authentic = () => {
             cookies.set('hassedPassword', hassedPassword);
         }
 
-        //reload browser
         window.location.reload();
 
     }
