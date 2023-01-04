@@ -53,7 +53,6 @@ const Authentic = () => {
 
     }
     
-    //swicth mode func
     const switchMode = ()=>{
         setIsSignup((previewIsSignup)=> !previewIsSignup);  
     }
@@ -67,7 +66,6 @@ const Authentic = () => {
             </p>
 
             <form onSubmit={handleSubmit}>
-                {/* show this if on signup, isSignup is used it's only needed on signup */}
                 {isSignup && (
                     <div className='auth__form-container_fields-content_input'>
                         <label htmlFor='fullName'> Full Name</label>
@@ -132,7 +130,6 @@ const Authentic = () => {
                 <div className='auth__form-container_fields-content_button'>
                     
                     {
-                        /* chekc if we're on signup*/
                        <button> 
                          {isSignup ? "Signup" : "Login"}
                         </button>
@@ -143,7 +140,7 @@ const Authentic = () => {
 
             <div className='auth__form-container_fields-account'>
                 <p>
-                    {/* if isSignup, show 'Already have an Account?'*/ }
+  
                     {isSignup? <span onClick={switchMode}> Already have an Account? </span> :
                      <span onClick={switchMode}> Don't have an Account? </span>}
 
