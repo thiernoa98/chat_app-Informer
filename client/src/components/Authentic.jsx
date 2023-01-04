@@ -19,7 +19,6 @@ const Authentic = () => {
 
     const [isSignup, setIsSignup] = useState(false);
 
-    //handle the changes
     const handleChange = (e)=>{
         e.preventDefault();
         setForm({...form, [e.target.name]:e.target.value});
@@ -27,7 +26,7 @@ const Authentic = () => {
     } 
 
     const handleSubmit = async (e)=>{
-        //prevent page reloding
+  
         e.preventDefault();
 
         const {username, password, phoneNumber } = form;
