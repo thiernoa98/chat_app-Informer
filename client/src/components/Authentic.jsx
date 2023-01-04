@@ -1,4 +1,3 @@
-//rafce // the login and signup class
 import React,{useState} from 'react';
 import Cookies from 'universal-cookie';
 import axios from 'axios';
@@ -18,7 +17,6 @@ const Authentic = () => {
 
     const [form, setForm] = useState(initialState);
 
-    //var to know if we are on sign up or signin
     const [isSignup, setIsSignup] = useState(false);
 
     //handle the changes
