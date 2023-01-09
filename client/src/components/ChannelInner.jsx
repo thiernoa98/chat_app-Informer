@@ -87,7 +87,6 @@ const TeamChannelHeader = ({ setIsEditing }) => {
     };
   
     return (
-      //team-channel-header__container
       <div className='team-channel-header__container'>
         <MessagingHeader />
         <div className='team-channel-header__right'>
