@@ -66,7 +66,6 @@ const TeamChannelHeader = ({ setIsEditing }) => {
       }
   
       return (
-        //the edit icon
         <div className='team-channel-header__channel-wrapper'>
           <p className='team-channel-header__name'>
             <img src={GroupIcon} alt="Group Icon" width='30px'/> {channel.data.name}
