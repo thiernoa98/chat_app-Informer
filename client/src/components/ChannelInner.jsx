@@ -52,7 +52,6 @@ const TeamChannelHeader = ({ setIsEditing }) => {
   
       if(channel.type === 'messaging') {
         return (
-          //team-channel-header__name-wrapper
           <div className='team-channel-header__name-wrapper'>
             {members.map(({ user }, i) => (
               <div key={i} className='team-channel-header__name-multi'>
