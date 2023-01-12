@@ -25,10 +25,8 @@ const CreateChannel = ({createType, setIsCreating}) => {
     //extracting our id, to add it to the gchat
     const {client, setActiveChannel} = useChatContext();
 
-    //keep track of/able to add multiple users
     const [addedUsers, setAddedUsers] = useState([client.userID || '']);
 
-  //create the channelNames
   const [channelName, setChannelName] = useState('');
 
   //creating groups
