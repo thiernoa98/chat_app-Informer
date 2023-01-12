@@ -38,7 +38,6 @@ const CreateChannel = ({createType, setIsCreating}) => {
       } );
       await newChannel.watch();
 
-      //remove the bar for adding channel name //clear the field
       setChannelName('');
       setIsCreating (false);
 
