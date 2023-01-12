@@ -3,7 +3,6 @@ import { useChatContext} from 'stream-chat-react';
 import {UserList} from './imports';
 import { CloseCreateChannel } from '../assets';
 
-//input name for new channel/group
 const ChannelNameInput = ({channelName = '', setChannelName}) =>{
 
 
