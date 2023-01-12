@@ -41,9 +41,8 @@ const CreateChannel = ({createType, setIsCreating}) => {
       setChannelName('');
       setIsCreating (false);
 
-      //have the new field with added member only
       setAddedUsers([client.userID]);
-      //switching to new channel
+
       setActiveChannel(newChannel);
 
     } catch (error) {
