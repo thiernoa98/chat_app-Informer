@@ -4,7 +4,6 @@ import {UserList} from './imports';
 import { CloseCreateChannel } from '../assets';
 
 
-//input name for edited channel/group
 const ChannelNameInput = ({ channelName = channelName,setChannelName}) =>{
 
   const handelChange = (event)=>{
@@ -28,7 +27,6 @@ const ChannelNameInput = ({ channelName = channelName,setChannelName}) =>{
 
 const EditChannel = ({setIsEditing}) => {
 
-  //getting the channel/group from the set using the chatContext var from stream-chat-react
   const {channel} = useChatContext();
  
   //the current group name
