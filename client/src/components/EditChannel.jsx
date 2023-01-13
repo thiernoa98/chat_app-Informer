@@ -40,13 +40,11 @@ const EditChannel = ({setIsEditing}) => {
       await channel.update({name: channelName},{text: `Group Name has been changed to ${channelName}`});
     }
 
-    //if name didn't change, but # users changes?
     if(addedUsers.length ){
       
       await channel.addMembers(addedUsers) ;
        
     }
-    //all done, reset it
     setChannelName(null);
     setIsEditing(false);
     setAddedUsers([]); 
@@ -64,7 +62,6 @@ const EditChannel = ({setIsEditing}) => {
       <ChannelNameInput channelName={channelName} setChannelName={setChannelName} />
       <UserList addedUsers={addedUsers} setAddedUsers={setAddedUsers}/>
 
-      {/*button to save changes*/}
       <div className='edit-channel__button-wrapper' onClick={saveChanges}>
         <p>Save Edit</p>
       </div>
