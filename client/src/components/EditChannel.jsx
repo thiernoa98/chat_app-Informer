@@ -23,8 +23,6 @@ const ChannelNameInput = ({ channelName = channelName,setChannelName}) =>{
 }
 
 
-
-
 const EditChannel = ({setIsEditing}) => {
 
   const {channel} = useChatContext();
@@ -36,13 +34,9 @@ const EditChannel = ({setIsEditing}) => {
   const saveChanges = async(event) =>{
     event.preventDefault();
 
-    //check if user has changed group name 
     const nameChange = channelName !== (channel.data.name || channel.data.id);
 
-    //const user = addedUsers !== (channel.data.name || channel.data.id);
-
     if(nameChange){
-      //{name:} we want to update the current name channelName (new)
       await channel.update({name: channelName},{text: `Group Name has been changed to ${channelName}`});
     }
 
