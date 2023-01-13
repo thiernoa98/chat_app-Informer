@@ -29,13 +29,10 @@ const EditChannel = ({setIsEditing}) => {
 
   const {channel} = useChatContext();
  
-  //the current group name
   const [channelName, setChannelName] = useState(channel?.data?.name || channel?.data?.id );
   const [addedUsers, setAddedUsers] = useState([]);
 
 
-
-  //action button func
   const saveChanges = async(event) =>{
     event.preventDefault();
 
