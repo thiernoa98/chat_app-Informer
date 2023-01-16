@@ -1,11 +1,9 @@
-//rafc"react air function coomponents"
 import React from 'react';
 import { AddChannel } from '../assets/AddChannel';
 import Ld from '../assets/loadding.gif';
 
 const TeamChannelList = ({ children, error = false, loading, type, isCreating, setIsCreating, setCreateType, setIsEditing, setToggleContainer }) => {
 
-    //if connection fail
     if(error)
     {
         return type === 'team' ? (
