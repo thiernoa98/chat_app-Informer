@@ -35,7 +35,6 @@ const TeamChannelList = ({ children, error = false, loading, type, isCreating, s
                 {type === 'team'?'Groups':'Personal Messages'}
             </p>
 
-            {/*button to add the groups, or people to text*/}
             <AddChannel 
             
                 isCreating = {isCreating}
