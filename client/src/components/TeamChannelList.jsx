@@ -21,7 +21,6 @@ const TeamChannelList = ({ children, error = false, loading, type, isCreating, s
         <div className='team-channel-list'>
             <p className='team-channel-list__message loading'>
                 {
-                    //condition
                     type === 'team'?'Groups':'Private Contacts' 
                 } loading <img src={Ld} width='15px'/>
             </p>
