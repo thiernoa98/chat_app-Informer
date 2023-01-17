@@ -6,14 +6,12 @@ import { Avatar, useChatContext } from 'stream-chat-react';
 const TeamChannelPreview = ({setActiveChannel, setToggleContainer, setIsCreating, setIsEditing, channel, type}) => {
     const {channel:activeChannel, client} = useChatContext();
 
-    //displays groups
     const ChannelPreview = () =>(
         <p className='channel-preview__item'>
             <img src={groupImg} width='30px' />{channel?.data?.name || channel?.data?.id} 
         </p>
     );
 
-    //preview for dirct messages
     const DirectPreview = () =>{
 
         //get the correct usr// and getting the user thats not us
