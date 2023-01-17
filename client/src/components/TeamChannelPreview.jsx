@@ -1,11 +1,9 @@
-//rafce //selecting the right group, wether a direct message or group message
 import React from 'react';
 import groupImg from '../assets/grp.png';
 import { Avatar, useChatContext } from 'stream-chat-react';
 
 
 const TeamChannelPreview = ({setActiveChannel, setToggleContainer, setIsCreating, setIsEditing, channel, type}) => {
-    //rename channel to active
     const {channel:activeChannel, client} = useChatContext();
 
     //displays groups
