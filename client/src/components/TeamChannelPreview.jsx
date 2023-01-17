@@ -13,8 +13,6 @@ const TeamChannelPreview = ({setActiveChannel, setToggleContainer, setIsCreating
     );
 
     const DirectPreview = () =>{
-
-        //get the correct usr// and getting the user thats not us
         const members = Object.values(channel.state.members).filter(({user} ) => user.id !== client.userID);
 
         console.log(members[0]);
