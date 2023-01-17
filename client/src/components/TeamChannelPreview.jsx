@@ -19,7 +19,6 @@ const TeamChannelPreview = ({setActiveChannel, setToggleContainer, setIsCreating
 
         return(
             <div className='channel-preview__item single'>
-                {/*avat is user's image*/}
                 <Avatar 
                     image={members[0]?.user?.image}
                     name={members[0]?.user?.fullName}
@@ -27,7 +26,6 @@ const TeamChannelPreview = ({setActiveChannel, setToggleContainer, setIsCreating
                 />
                 
                 <p>
-                   {/*members name, the first user created on stream, display their name*/}
                    {members[0]?.user?.fullName || members[0]?.user?.id}
                 </p>
             </div>
