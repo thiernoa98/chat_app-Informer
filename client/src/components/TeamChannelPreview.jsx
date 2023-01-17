@@ -2,7 +2,6 @@ import React from 'react';
 import groupImg from '../assets/grp.png';
 import { Avatar, useChatContext } from 'stream-chat-react';
 
-
 const TeamChannelPreview = ({setActiveChannel, setToggleContainer, setIsCreating, setIsEditing, channel, type}) => {
     const {channel:activeChannel, client} = useChatContext();
 
