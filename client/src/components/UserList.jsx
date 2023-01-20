@@ -16,19 +16,16 @@ const ListConatiner =({children}) =>{
 }
 
 const UserItem =({user, setAddedUsers})=>{
-    //adding users to groups
     const [added, setAdded] = useState(false);
 
     const handleSeclect = ()=>{
 
         if(added) {
-            //just remove the check from one user only
             setAddedUsers((prevUsers) => prevUsers.filter((prevUser) => prevUser !== user.id ))
         }else{
               setAddedUsers((prevUsers)=> [... prevUsers, user.id])  
         }
 
-        //modify to the previous value, if isAdded, then unset/unAdd it
         setAdded((prevAdded) => !prevAdded);
     }
 
