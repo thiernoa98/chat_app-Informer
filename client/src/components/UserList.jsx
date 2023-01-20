@@ -1,9 +1,7 @@
-//starting private message with others, class
 import React, {useEffect, useState} from "react";
 import { Avatar, useChatContext } from "stream-chat-react";
 import {InviteIcon} from '../assets';
 
-//the childrn are the elements in between ListConatiner tags
 const ListConatiner =({children}) =>{
     return (
         <div className="user-list__container">
@@ -17,7 +15,6 @@ const ListConatiner =({children}) =>{
     )
 }
 
-//getting the user info, image, name...
 const UserItem =({user, setAddedUsers})=>{
     //adding users to groups
     const [added, setAdded] = useState(false);
