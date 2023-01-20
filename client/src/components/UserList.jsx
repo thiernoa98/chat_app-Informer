@@ -33,10 +33,9 @@ const UserItem =({user, setAddedUsers})=>{
         <div className="user-item__wrapper" onClick={handleSeclect}>
             <div className="user-item__name-wrapper">
                 <Avatar image={user.image} name={user.fullName || user.id} size ={40} />
-                {/*display name instead of just avatar*/}
+                    
                 <p className="user-item__name">{user.fullName || user.id}</p>
         
-                {/* if added, show check mark, else empty div*/}
                 {added? <InviteIcon/> : <div className="user-item__invite-empty"/> }
             </div>
 
@@ -45,10 +44,8 @@ const UserItem =({user, setAddedUsers})=>{
 }
 
 const UserList = ({setAddedUsers}) => {
-    //get client
     const {client} = useChatContext();
      
-    //array of all users
     const [users, setUsers] = useState([]);
 
     const [loading, setLoading] = useState(false);
@@ -57,7 +54,6 @@ const UserList = ({setAddedUsers}) => {
 
     const [error, setError] = useState(false);
 
-    //call when something changes
     useEffect(() =>{
 
        const getUsers = async() =>{
@@ -66,19 +62,17 @@ const UserList = ({setAddedUsers}) => {
         setLoading (true);
 
         try {
-            //querying users in params
             const response = await client.queryUsers(
-                {   //expluding ourselfs in the query since we are adding others, not ourselves
+                {   
                     id: {$ne: client.userID}
                 },
                 {
                     id: 1
                 },
                 {
-                    limit: 10 //limit 10 users
+                    limit: 10 
                 }
             )
-            //check the query
             if(response.users.length)
             {
                 setUsers(response.users);
@@ -92,11 +86,9 @@ const UserList = ({setAddedUsers}) => {
         setLoading(false);
        }
 
-       //if there's a client/user, then call getUser func
        if(client) getUsers()
     }, [])
 
-    //if error, show this
     if(error){
         <ListConatiner>
         return(
@@ -122,7 +114,6 @@ const UserList = ({setAddedUsers}) => {
       {loading ? <div className="user-list__message">
         Users loading...
       </div> : 
-      //is there user? check
       (users?.map((user, i) =>(
         <UserItem index={i} key={user.id} user = {user} setAddedUsers = {setAddedUsers} />
       ))
