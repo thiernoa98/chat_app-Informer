@@ -9,7 +9,6 @@ const PORT = process.env.PORT || 5000;
 require('dotenv').config();
 
 app.use(cors());
-//con of json from front-backend
 app.use(express.json());
 app.use(express.urlencoded());
 
