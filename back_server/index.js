@@ -1,8 +1,7 @@
 //nojs server
 const express = require('express');
 const cors = require('cors');
-//const { response } = require('express');
-//import
+
 const authenticRoutes = require("./routes/authentic.js")
 const app = express();
 const PORT = process.env.PORT || 5000;
